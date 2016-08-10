@@ -14,8 +14,10 @@ urlpatterns = [
 
         #Turnos
         url(r'^turno/calendario/$', turnoViews.turnos_calendario, name='calendario'),
+        url(r'^turno/(?P<pk>[0-9]+)/$', turnoViews.turno_detail,name='turno_detail'),
 
         #Paciente
+<<<<<<< HEAD
         #url(r'^paciente/new/$', views.paciente_new, name='paciente_new'),
         url(r'^paciente/(?P<pk>[0-9]+)/edit/$', views.paciente_edit, name='paciente_edit'),
         url(r'^paciente/(?P<pk>[0-9]+)/$', views.paciente_detail),
@@ -27,6 +29,21 @@ urlpatterns = [
         url(r'^medico/(?P<pk>[0-9]+)/edit/$', views.medico_edit, name='medico_edit'),
         url(r'^medico/(?P<pk>[0-9]+)/$', views.medico_detail),
         url(r'^medico/all/$', views.medico_all, name='medico_all'),
+=======
+        
+        url(r'^paciente/(?P<pk>[0-9]+)/edit/$', pacienteViews.paciente_edit, name='paciente_edit'),
+        url(r'^paciente/(?P<pk>[0-9]+)/delete/$', pacienteViews.paciente_delete, name='paciente_delete'),
+        url(r'^paciente/all/$', pacienteViews.paciente_all, name='paciente_all'),
+        url(r'^paciente/nuevo/$', pacienteViews.paciente_nuevo, name='paciente_nuevo'),
+        url(r'^paciente/detail/(?P<pk>[0-9]+)/$', pacienteViews.paciente_detail, name='paciente_detail'),
+
+        #Medico
+        
+        url(r'^medico/(?P<pk>[0-9]+)/edit/$', medicoViews.medico_edit, name='medico_edit'),
+        url(r'^medico/(?P<pk>[0-9]+)/delete/$', medicoViews.medico_delete, name='medico_delete'),
+        url(r'^medico/detail/(?P<pk>[0-9]+)/$', medicoViews.medico_detail, name='medico_detail'),
+        url(r'^medico/all/$', medicoViews.medico_all, name='medico_all'),
+>>>>>>> 64653685f1f7d6b0cf4fe9c94ff8e90441aaf656
         url(r'^medico/nuevo/$', medicoViews.medico_nuevo, name='medico_nuevo'),
 
         url(r'^historia/new/$', views.historia_new, name='historia_new'),

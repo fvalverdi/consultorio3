@@ -28,6 +28,7 @@ function buscarOrg(){
 	<h1>Nuevo MEDICO</h1>
 {% if errores%}
 <div class="alert alert-danger" role="alert">
+<<<<<<< HEAD
   ERRORES:
   {% for e in errores%}
     <ol>{{e}}</ol>
@@ -38,17 +39,34 @@ function buscarOrg(){
 {% csrf_token %}
   <div class="form-group">
     <label for="Nombre" class="col-sm-1 control-label">Nombre</label>
+=======
+  {% for e in errores %}
+    <ol>{{e}}</ol>
+  {% endfor %}
+</div>
+{% endif %}
+
+<form name=formul method="POST" action="{% url 'medico_nuevo' %}" class="form-horizontal">
+{% csrf_token %}
+  <div class="form-group">
+    <label for="Nombre" class="col-sm-2 control-label">Nombre</label>
+>>>>>>> 64653685f1f7d6b0cf4fe9c94ff8e90441aaf656
     <div class="col-sm-10">
     <input type=text class="form-control" name=nombre value="{{nombre}}" placeholder="Nombres">
     </div>
   </div>
   <div class="form-group">
+<<<<<<< HEAD
     <label for="Apellido" class="col-sm-1 control-label">Apellido</label>
+=======
+    <label for="Apellido" class="col-sm-2 control-label">Apellido</label>
+>>>>>>> 64653685f1f7d6b0cf4fe9c94ff8e90441aaf656
     <div class="col-sm-10">
     <input type=text class="form-control" name=apellido value="{{apellido}}" placeholder="Apellido">
     </div>
   </div>
   <div class="form-group">
+<<<<<<< HEAD
     <label for="Dni" class="col-sm-1 control-label">Dni</label>
     <div class="col-sm-10">
     <input type=number class="form-control" name=dni value="{{dni}}" placeholder="12345678">
@@ -62,11 +80,27 @@ function buscarOrg(){
   </div>
   <div class="form-group">
     <label for="Domicilio" class="col-sm-1 control-label">Domicilio</label>
+=======
+    <label for="Dni" class="col-sm-2 control-label">Dni</label>
+    <div class="col-sm-10">
+    <input type=text class="form-control" name=dni value="{{dni}}" placeholder="12345678">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="Fecha Nacimiento" class="col-sm-2 control-label">Fecha Nacimiento</label>
+    <div class="col-sm-10">
+    <input type="date" class="form-control" name=fecha_nac value="{{fecha}}" placeholder="01/01/2000">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="Domicilio" class="col-sm-2 control-label">Domicilio</label>
+>>>>>>> 64653685f1f7d6b0cf4fe9c94ff8e90441aaf656
     <div class="col-sm-10">
     <input type=text class="form-control" name=domicilio value="{{dom}}" placeholder="Domicilio">
     </div>
   </div>
   <div class="form-group">
+<<<<<<< HEAD
     <label for="Telefono" class="col-sm-1 control-label">Telefono</label>
     <div class="col-sm-10">
     <input type=number class="form-control" name=tel value="{{tel}}" placeholder="383-411111">
@@ -83,15 +117,41 @@ function buscarOrg(){
     <label for="Matricula" class="col-sm-1 control-label">Matricula</label>
     <div class="col-sm-10">
     <input type=number class="form-control" name=mat value="{{mat}}" placeholder="1234">
+=======
+    <label for="Telefono" class="col-sm-2 control-label">Telefono</label>
+    <div class="col-sm-10">
+    <input type=text class="form-control" name=tel value="{{tel}}" placeholder="383-411111">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="Sexo" class="col-sm-2 control-label">Sexo</label>
+    <div class="col-sm-10">
+    <input type="radio" name="sexo" value="1" checked> Masculino
+    <input type="radio" name="sexo" value="2"> Femenino
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="Matricula" class="col-sm-2 control-label">Matricula</label>
+    <div class="col-sm-10">
+    <input type=text class="form-control" name=mat value="{{mat}}" placeholder="1234">
+>>>>>>> 64653685f1f7d6b0cf4fe9c94ff8e90441aaf656
     </div>
   </div>
 
   <div class="form-group">
+<<<<<<< HEAD
     <label for="organizacion" class="col-sm-1 control-label">Organizacion</label>
     <div class="col-sm-10">
     <input type=text class="form-control" name=org value="{{org.nombre}}" placeholder="Organizacion" disabled="">
     <input type="hidden"  id="horganizacion" name="horganizacion" value="{{org.pk}}">
     <input type="Button" value="Buscar" onclick="buscarOrg()" class="btn btn-sm btn-primary">
+=======
+    <label for="organizacion" class="col-sm-2 control-label">Organizacion</label>
+    <div class="col-sm-10">
+    <input type=text class="form-control" name=org value="{{org.nombre}}" placeholder="Organizacion" disabled="">
+    <input type="hidden"  id="horganizacion" name="horganizacion" value={{org.pk}}>
+    <input type="Button" value="Buscar" onclick="buscarOrg()" class="save btn btn-primary">
+>>>>>>> 64653685f1f7d6b0cf4fe9c94ff8e90441aaf656
     </div>
   </div>
 

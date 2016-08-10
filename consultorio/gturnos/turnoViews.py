@@ -59,6 +59,7 @@ def turno_nuevo(request):
 			#return render(request, 'gturnos/turno/nuevoTurno.html', {'errores':errores})
 		else:
 			paciente1 = Paciente.objects.get(pk=request.POST['hpaciente'])
+<<<<<<< HEAD
 
 		
 		if 	hayErrores:
@@ -73,4 +74,17 @@ def turno_nuevo(request):
 		return render(request, 'nuevo_turno', {})
 
 
+=======
+>>>>>>> 64653685f1f7d6b0cf4fe9c94ff8e90441aaf656
 
+		
+		if 	hayErrores:
+			return render(request, 'gturnos/turno/nuevoTurno.html', {'errores':errores,'fechaInicio':fechaInicio})
+		else: #datetime.now()
+			nuevoTurno = Turno(fecha_inicio=fechaInicio,fecha_fin = fechaFin, medico = medico1,paciente = paciente1)
+			nuevoTurno.save()
+			return redirect('turno_detail',pk=nuevoTurno.pk)
+		
+	else:		
+		form = TurnoForm()
+		return render(request, 'nuevo_turno', {})
